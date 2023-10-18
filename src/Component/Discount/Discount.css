@@ -1,0 +1,15 @@
+.discountImg{
+    background-image: url('images/tv.webp');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 300px;
+}
+
+.discountImgOne{
+    background-image: url('images/17.webp');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 300px;
+}
