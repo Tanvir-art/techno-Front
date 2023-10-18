@@ -1,0 +1,14 @@
+.bgImg{
+    background-image: url('images/11.webp');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 300px;
+}
+.bgImgOne{
+    background-image: url('images/12.webp');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 300px;
+}
