@@ -1,9 +1,13 @@
 import React, { useContext } from 'react'
-import { Link } from 'react-router-dom'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { authContext } from '../../../Provider/Auhtprovider'
 
 const Login = () => {
-  const {signIn} = useContext(authContext);
+  const {signIn, signWithGoogle} = useContext(authContext);
+  const location = useLocation();
+  const navigate = useNavigate()
   const handleLogin =(e)=>{
     e.preventDefault();
     const form = e.target; 
@@ -13,10 +17,27 @@ const Login = () => {
     signIn(email, pass)
     .then(result=>{
       console.log(result.user)
+      navigate(location?.state ? location.state : '/');
     })
     .catch(error=>{
       console.error(error);
+      toast("Email or Password does not match")
     })
+  }
+
+  const handleGoogleLogin =()=>{
+    signWithGoogle()
+    .then(result=> {
+      const user = result.user;
+      console.log(user);
+     navigate( '/')
+      return;
+    })
+    .catch(error=>{
+      console.log(error)
+      return;
+    })
+  
   }
   return (
     <div>
@@ -43,7 +64,9 @@ const Login = () => {
         </div>
 
         <p>Already Login? <Link to='/signup'> Sign up</Link></p>
+        <button onClick={handleGoogleLogin} className="px-6 py-3 bg-[#333] text-white">Google Login</button>
       </form>
+      <ToastContainer/>
     </div>
   </div>
 </div>

@@ -37,6 +37,13 @@ const Navbar = () => {
     </ul>
   </div>
   <div className="navbar-end">
+  {
+      user &&  
+      <div className="w-10 mr-6">
+      <img className='rounded-full' src={user.photoURL} />
+    </div>
+    } 
+    
     {
       user? <button onClick={handleSignout} className="btn">Logout</button>
       :

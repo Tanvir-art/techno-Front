@@ -1,8 +1,12 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { Link } from 'react-router-dom'
 import { authContext } from '../../../Provider/Auhtprovider'
 
 const Signup = () => {
+  const [register, setRegister] = useState('');
+  const [success, setSuccesss] = useState('');
   const {createUser} = useContext(authContext)
   const handleSignup = (e)=>{
     e.preventDefault();
@@ -10,6 +14,19 @@ const Signup = () => {
     const name = form.nam.value;
     const email = form.email.value;
     const pass = form.pass.value;
+
+    setRegister('')
+    setSuccesss('')
+
+    if(pass.length < 6){
+      toast('Password should be at last 6 character');
+      return;
+    }else if(!/^(?=.*[A-Z])(?=.*[!@#$%^&*()_+{}\[\]:;<>,.?~\\/-])[\w!@#$%^&*()_+{}\[\]:;<>,.?~\\/-]+$/.test(pass)){
+      toast("In password give at least one capital letter & One special keyword");
+      return;
+    }
+
+
     createUser(email, pass)
     .then(result =>{
       console.log(result.user)
@@ -26,9 +43,12 @@ const Signup = () => {
       })
       .then(res=> res.json())
       .then(data=>console.log(data))
+      toast('User Created Successfully')
     })
     .catch(error=>{
       console.error(error);
+      setRegister(error.message)
+      toast("email already use");
     })
   }
   return (
@@ -65,6 +85,7 @@ const Signup = () => {
 
         <p>Already Signup? <Link to='/login'>Login</Link></p>
       </form>
+      <ToastContainer />
     </div>
   </div>
 </div>
