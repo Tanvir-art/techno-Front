@@ -1,14 +1,35 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
+import { authContext } from '../../../Provider/Auhtprovider'
 
 const Signup = () => {
+  const {createUser} = useContext(authContext)
   const handleSignup = (e)=>{
     e.preventDefault();
     const form = e.target; 
     const name = form.nam.value;
     const email = form.email.value;
     const pass = form.pass.value;
-    console.log(name, email, pass)
+    createUser(email, pass)
+    .then(result =>{
+      console.log(result.user)
+
+      //user declered 
+      const user = {email}
+
+      fetch('http://localhost:5000/user',{
+        method: 'POST',
+        headers:{
+          'content-type': 'application/json' 
+        },
+        body: JSON.stringify(user)
+      })
+      .then(res=> res.json())
+      .then(data=>console.log(data))
+    })
+    .catch(error=>{
+      console.error(error);
+    })
   }
   return (
     <div>
