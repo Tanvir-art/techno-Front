@@ -14,7 +14,7 @@ const AddProduct = () => {
 
     const  newCoffee = {image, nam, brand, message, type, rating}
     console.log(newCoffee)
-
+// form.reset();
 
     //send data to server
 
