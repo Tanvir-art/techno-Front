@@ -32,7 +32,7 @@ const Navbar = () => {
     <ul className="menu menu-horizontal px-1">
         <li><NavLink to='/'>Home</NavLink></li>
         <li><NavLink to='/add-product'>Add Product</NavLink></li>
-        <li><NavLink to='/cart'>My Cart</NavLink></li>
+        <li><NavLink to='/getcart'>My Cart</NavLink></li>
         <li><NavLink to='/login'>Log in</NavLink></li>
     </ul>
   </div>

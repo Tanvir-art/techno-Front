@@ -1,7 +1,11 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 
 const BrandProduct = ({product}) => {
-    const {image, nam, brand, type, price, rating} = product;
+    const {_id, image, nam, brand, type, price, rating} = product;
+    // const handleUpdate =(id)=>{
+    //   console.log(id)
+    // }
   return (
     <div>
       <div className="card bg-base-100 shadow-xl">
@@ -21,8 +25,13 @@ const BrandProduct = ({product}) => {
 
   </div>
     <div className="card-actions">
+      <Link to={`/productDetails/${_id}`}>
       <button className="btn btn-primary">Details</button>
-      <button className="btn btn-primary">Update</button>
+      
+      </Link>
+      <Link to={`/brand/update/${_id}`}>
+      <button  className="btn btn-primary">Update</button>
+      </Link>
     </div>
   </div>
 </div>

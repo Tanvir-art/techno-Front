@@ -14,11 +14,16 @@ import Signup from './Component/Pages/Signup/Signup.jsx';
 import Auhtprovider from './Provider/Auhtprovider.jsx';
 import PrivateRoute from './PrivateRoute/PrivateRoute.jsx';
 import BrandDetails from './Component/Pages/BrandDetails/BrandDetails.jsx';
+import UpdateProduct from './Component/Pages/UpdateProduct/UpdateProduct.jsx';
+import ProdutDetails from './Component/ProductDetails/ProdutDetails.jsx';
+import Getcart from './Component/Pages/GetCart/Getcart.jsx';
+import Error from './Component/Error/Error.jsx';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root/>,
+    errorElement: <Error />,
     children: [
       {
         path: "/",
@@ -41,6 +46,21 @@ const router = createBrowserRouter([
         path: "/brand/:brandName",
         element: <BrandDetails/>,
         loader: ()=> fetch('http://localhost:5000/get-product')
+      },
+      {
+        path: "/brand/update/:id",
+        element: <PrivateRoute><UpdateProduct/></PrivateRoute>,
+        loader: ({params})=> fetch(`http://localhost:5000/get-product/${params.id}`)
+      },
+      {
+        path: "/productDetails/:id",
+        element: <PrivateRoute><ProdutDetails/></PrivateRoute>,
+        loader: ({params})=> fetch(`http://localhost:5000/productDetails/${params.id}`)
+      },
+      {
+        path: "/getcart",
+        element: <PrivateRoute><Getcart/></PrivateRoute>,
+        loader: ()=>fetch('http://localhost:5000/cart-product')
       },
     ],
   },
