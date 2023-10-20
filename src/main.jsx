@@ -13,6 +13,7 @@ import Login from './Component/Pages/Login/Login.jsx';
 import Signup from './Component/Pages/Signup/Signup.jsx';
 import Auhtprovider from './Provider/Auhtprovider.jsx';
 import PrivateRoute from './PrivateRoute/PrivateRoute.jsx';
+import BrandDetails from './Component/Pages/BrandDetails/BrandDetails.jsx';
 
 const router = createBrowserRouter([
   {
@@ -35,6 +36,11 @@ const router = createBrowserRouter([
       {
         path: "/signup",
         element: <Signup/>,
+      },
+      {
+        path: "/brand/:brandName",
+        element: <BrandDetails/>,
+        loader: ()=> fetch('http://localhost:5000/get-product')
       },
     ],
   },

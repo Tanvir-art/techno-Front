@@ -10,11 +10,12 @@ const AddProduct = () => {
     const  brand = form.brand.value;
     const  message = form.message.value;
     const  type = form.type.value;
+    const  price = form.price.value;
     const  rating = form.rating.value;
 
-    const  newCoffee = {image, nam, brand, message, type, rating}
+    const  newCoffee = {image, nam, brand, message, type,price, rating}
     console.log(newCoffee)
-// form.reset();
+ form.reset();
 
     //send data to server
 

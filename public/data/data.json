@@ -1,0 +1,34 @@
+{
+    "products": [
+      {
+        "id" : 1,
+        "brandName": "Apple",
+        "image_url": "https://i.ibb.co/CJ9kJkc/A-brief-history-of-apple-inc-1280x640.jpg"
+      },
+      {
+        "id" : 2,
+        "brandName": "Samsung",
+        "image_url": "https://i.ibb.co/JtTCn0P/samsung-title.jpg"
+      },
+      {
+        "id" : 3,
+        "brandName": "Sony",
+        "image_url": "https://i.ibb.co/ZL3Ph3F/sony-hack2.webp"
+      },
+      {
+        "id" : 4,
+        "brandName": "Hp",
+        "image_url": "https://i.ibb.co/WGzF8b6/Adobe-Stock-477036492-Editorial-Use-Only-718x523.jpg"
+      },
+      {
+        "id" : 5,
+        "brandName": "Intel",
+        "image_url": "https://i.ibb.co/DCNXwkF/Intel-logo-credit-Walden-Kirsch-Intel-Corporation.webp"
+      },
+      { "id" : 6,
+        "brandName": "Walton",
+        "image_url": "https://i.ibb.co/NNCN89v/walton-picture.jpg"
+      }
+    ]
+  }
+  
