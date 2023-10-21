@@ -9,7 +9,7 @@ const Getcart = () => {
   const [cart, setCart] = useState(cartData);
   const handleDelete= (id)=>{
     console.log(id)
-    fetch(`http://localhost:5000/cart-product/${id}`, {
+    fetch(`https://back-ay75mw78l-tanvir-haans-projects.vercel.app/cart-product/${id}`, {
       method: 'DELETE'
     })
     .then(res=>res.json())

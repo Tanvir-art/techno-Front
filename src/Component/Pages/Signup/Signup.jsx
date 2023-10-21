@@ -34,7 +34,7 @@ const Signup = () => {
       //user declered 
       const user = {email}
 
-      fetch('http://localhost:5000/user',{
+      fetch('https://back-ay75mw78l-tanvir-haans-projects.vercel.app/user',{
         method: 'POST',
         headers:{
           'content-type': 'application/json' 

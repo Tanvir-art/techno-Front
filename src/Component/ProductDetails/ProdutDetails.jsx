@@ -9,7 +9,7 @@ const ProdutDetails = () => {
   console.log(productSingle)
 
   const submitCartData =()=>{
-    fetch('http://localhost:5000/cart',{
+    fetch('https://back-ay75mw78l-tanvir-haans-projects.vercel.app/cart',{
       method: 'POST',
       headers: {
         'content-type' : 'application/json'

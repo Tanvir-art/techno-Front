@@ -19,7 +19,7 @@ const AddProduct = () => {
 
     //send data to server
 
-    fetch('http://localhost:5000/add-product',{
+    fetch('https://back-ay75mw78l-tanvir-haans-projects.vercel.app/add-product',{
       method: 'POST',
       headers: {
         'content-type' : 'application/json'

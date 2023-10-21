@@ -45,22 +45,22 @@ const router = createBrowserRouter([
       {
         path: "/brand/:brandName",
         element: <BrandDetails/>,
-        loader: ()=> fetch('http://localhost:5000/get-product')
+        loader: ()=> fetch('https://back-ay75mw78l-tanvir-haans-projects.vercel.app/get-product')
       },
       {
         path: "/brand/update/:id",
         element: <PrivateRoute><UpdateProduct/></PrivateRoute>,
-        loader: ({params})=> fetch(`http://localhost:5000/get-product/${params.id}`)
+        loader: ({params})=> fetch(`https://back-ay75mw78l-tanvir-haans-projects.vercel.app/get-product/${params.id}`)
       },
       {
         path: "/productDetails/:id",
         element: <PrivateRoute><ProdutDetails/></PrivateRoute>,
-        loader: ({params})=> fetch(`http://localhost:5000/productDetails/${params.id}`)
+        loader: ({params})=> fetch(`https://back-ay75mw78l-tanvir-haans-projects.vercel.app/productDetails/${params.id}`)
       },
       {
         path: "/getcart",
         element: <PrivateRoute><Getcart/></PrivateRoute>,
-        loader: ()=>fetch('http://localhost:5000/cart-product')
+        loader: ()=>fetch('https://back-ay75mw78l-tanvir-haans-projects.vercel.app/cart-product')
       },
     ],
   },
