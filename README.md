@@ -17,7 +17,9 @@ A simple online shop project with the following features:
 
 4. **Delete from My Cart:**
    - Remove items from the shopping cart.
-
+     
+5. **Login & Logout:**
+   - The user can login & logout
 
 Explore the live demo: [Tech Shop](https://technocrud-b57e7.web.app/)
 
