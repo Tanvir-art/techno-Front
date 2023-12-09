@@ -1,8 +1,24 @@
-# React + Vite
+# Techno Front End
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+A simple online shop project with the following features:
+
+1. **Create Product:**
+   - Add new products to the inventory with details like name, price, and category.
+
+2. **Show Products According to Category:**
+   - View a list of products based on their categories.
+
+3. **My Cart Options:**
+   - Add products to the shopping cart.
+   - View the items in the shopping cart.
+   - Update the quantity of items in the cart.
+
+4. **Delete from My Cart:**
+   - Remove items from the shopping cart.
+
+
+Explore the live demo: [Tech Shop](https://technocrud-b57e7.web.app/)
+
+
